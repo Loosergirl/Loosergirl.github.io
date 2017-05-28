@@ -1,0 +1,308 @@
+/*font*/
+
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('../fonts/raleway-regular-webfont.woff2') format('woff2'), url('../fonts/raleway-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+a {
+    background-color: transparent;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+}
+
+.nav-list-wrapper {
+    display: none;
+}
+
+.nav-menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    background: #fff;
+    display: block;
+}
+
+.page_item {
+    width: 200px;
+}
+
+.page_item a {
+    display: block;
+    padding: 1em;
+    color: black;
+    font-size: 1.2em;
+    text-decoration: none;
+    -webkit-transition: color 0.2s, background 0.5s;
+    transition: color 0.2s, background 0.5s;
+}
+
+.page_item a:hover {
+    color: rgb(226, 64, 139);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(230, 150, 163, 0.65) 100%);
+}
+
+
+/* Site Wrapper - Everything that isn't navigation */
+
+.site-wrap {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: teal;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+    background: url(../images/adi-ulici-116464-sm.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-position: center center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+    display: block;
+    position: fixed;
+    left: 15px;
+    top: 5px;
+    z-index: 2;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    font-size: 2.4rem;
+}
+
+.nav-trigger+label,
+.site-wrap {
+    -webkit-transition: left 0.2s;
+    transition: left 0.2s;
+}
+
+.nav-trigger:checked+label {
+    left: 215px;
+}
+
+.nav-trigger:checked~.site-wrap {
+    left: 200px;
+    -webkit-box-shadow: 0 0 5px 5px rgba(225, 225, 225, 0.5);
+    box-shadow: 0 0 5px 5px rgba(225, 225, 225, 0.5);
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    padding: 1rem 2rem 0.5rem;
+    max-width: 1000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    margin: 4rem 1rem 0;
+}
+
+.container main,
+.container section {
+    margin-bottom: 1rem;
+}
+
+.container main p,
+.container section p {
+    margin: 0.5rem 0;
+}
+
+.container ul li {
+    list-style-type: circle;
+    margin-left: 1rem;
+}
+
+b {
+    font-weight: 500;
+}
+
+.info-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    @media (min-width: 720px) {
+        float: right;
+    }
+    margin-top: 1rem;
+}
+
+.contact-info {
+    line-height: 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media screen and (min-width: 540px) {
+    label[for="nav-trigger"] {
+        display: none;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .nav-list-wrapper {
+        display: block;
+        padding: 1rem 10px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        overflow: hidden;
+        font-family: 'ralewayregular', sans-serif;
+        background-color: rgba(0, 0, 0, .7);
+    }
+    .nav-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        list-style: none;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+        max-width: 736px;
+    }
+    .nav-link {
+        color: rgba(255, 255, 255, .5);
+        text-decoration: none;
+        -webkit-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+    }
+    .nav-link:focus,
+    .nav-link:hover {
+        color: rgba(255, 255, 255, .75);
+        outline: 0;
+    }
+    .active {
+        color: #fff;
+    }
+    .site-wrap {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .container {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap
+    }
+    .info-box {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 636px) and (max-width: 1120px) {
+    .site-wrap {
+        background: url(../images/adi-ulici-116464-md.jpg) no-repeat center center fixed;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media (min-width: 1120px) and (max-width: 1920px) {
+    .site-wrap {
+        background: url(../images/adi-ulici-116464-lg.jpg) no-repeat center center fixed;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+@media (min-width: 1920px) {
+    .site-wrap {
+        background: url(../images/adi-ulici-116464.jpg) no-repeat center center fixed;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+
+/* Micro reset */
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.portrait-img {
+    max-width: 8rem;
+    height: auto;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 0.25rem;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
